@@ -11,6 +11,10 @@ import { config } from './config/wagmi'
 
 const queryClient = new QueryClient()
 
+
+const storedTheme = localStorage.getItem('rialo_theme') || 'dark'
+document.documentElement.setAttribute('data-theme', storedTheme)
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <WagmiProvider config={config}>
